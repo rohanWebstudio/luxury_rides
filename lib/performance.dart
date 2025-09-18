@@ -146,10 +146,12 @@ class _PerformancePageState
                     _infoBox(
                       "Completed rate",
                       "80%",
+                      Colors.amber,
                     ),
                     _infoBox(
                       "Cancellation rate",
                       "20%",
+                      Colors.red,
                     ),
                   ],
                 ),
@@ -274,6 +276,8 @@ class _PerformancePageState
     title,
     String
     value,
+    Color
+    borderColor,
   ) {
     return Container(
       width: 160,
@@ -283,7 +287,7 @@ class _PerformancePageState
       decoration: BoxDecoration(
         color: Colors.grey.shade900,
         border: Border.all(
-          color: Colors.amber,
+          color: borderColor,
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(
