@@ -152,15 +152,29 @@ class _LoginPageState
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Dont have an account? Sign Up',
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: Colors.white,
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 70,
                     ),
-                  ),
+                    Text(
+                      'Dont have an account?',
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Sign Up',
+                        style: GoogleFonts.inter(
+                          fontSize: 14,
+                          color: Colors.amber,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
