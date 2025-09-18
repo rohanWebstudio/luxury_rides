@@ -120,6 +120,7 @@ class _PerformancePageState
                 const SizedBox(
                   height: 10,
                 ),
+<<<<<<< HEAD
                 Center(
                   child: const Text(
                     "Trip completed",
@@ -135,6 +136,13 @@ class _PerformancePageState
                       color: Colors.amber,
                       fontSize: 16,
                     ),
+=======
+                const Text(
+                  "Trip completed\n50 trips over a week",
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 16,
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                   ),
                 ),
                 const SizedBox(
@@ -156,6 +164,7 @@ class _PerformancePageState
                 const SizedBox(
                   height: 25,
                 ),
+<<<<<<< HEAD
                 Row(
                   children: [
                     const Text(
@@ -171,6 +180,13 @@ class _PerformancePageState
                       size: 16,
                     ),
                   ],
+=======
+                const Text(
+                  "Today's income",
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                 ),
                 const SizedBox(
                   height: 5,
@@ -178,8 +194,13 @@ class _PerformancePageState
                 const Text(
                   "AED 500",
                   style: TextStyle(
+<<<<<<< HEAD
                     color: Colors.amber,
                     fontSize: 18,
+=======
+                    color: Colors.white,
+                    fontSize: 26,
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -231,11 +252,16 @@ class _PerformancePageState
                   children: const [
                     Icon(
                       Icons.card_giftcard,
+<<<<<<< HEAD
                       color: Colors.white,
+=======
+                      color: Colors.amber,
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                     ),
                     SizedBox(
                       width: 8,
                     ),
+<<<<<<< HEAD
                     Column(
                       children: [
                         Text(
@@ -257,6 +283,14 @@ class _PerformancePageState
                       Icons.arrow_forward_ios,
                       color: Colors.amber,
                       size: 16,
+=======
+                    Text(
+                      "\$0 Bonus",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                     ),
                   ],
                 ),

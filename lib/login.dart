@@ -152,6 +152,7 @@ class _LoginPageState
                     ),
                   ),
                 ),
+<<<<<<< HEAD
                 Row(
                   children: [
                     const SizedBox(
@@ -175,6 +176,17 @@ class _LoginPageState
                       ),
                     ),
                   ],
+=======
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Dont have an account? Sign Up',
+                    style: GoogleFonts.inter(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                 ),
               ],
             ),

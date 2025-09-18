@@ -152,7 +152,6 @@ class _ProfilePageState
                       '/emergencycontacts',
                       Colors.white,
                     ),
-                    // ✅ Logout with custom action
                     _menuItem(
                       Icons.logout,
                       'Logout',
@@ -174,7 +173,6 @@ class _ProfilePageState
     );
   }
 
-  /// Reusable menu item widget
   Widget
   _menuItem(
     IconData
@@ -218,7 +216,6 @@ class _ProfilePageState
     );
   }
 
-  /// Logout Confirmation Dialog
   void
   _logoutDialog(
     BuildContext
@@ -309,7 +306,6 @@ class _ProfilePageState
                           ),
                           child: TextButton(
                             onPressed: () {
-                              // Clear stack and go to signin
                               Navigator.pushNamedAndRemoveUntil(
                                 context,
                                 '/signin',

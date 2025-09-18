@@ -17,6 +17,7 @@ class EndRidePage
     context,
   ) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: IconButton(
@@ -40,6 +41,8 @@ class EndRidePage
         ),
         centerTitle: true,
       ),
+=======
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
       body: Stack(
         children: [
           Positioned.fill(
@@ -67,6 +70,24 @@ class EndRidePage
               ),
             ),
           ),
+<<<<<<< HEAD
+=======
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(
+                16.0,
+              ),
+              child: Text(
+                'Towards Dubai Mall Road',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -101,6 +122,7 @@ class EndRidePage
                     ),
                     child: Row(
                       children: [
+<<<<<<< HEAD
                         const Icon(
                           Icons.directions_car,
                           color: Colors.white,
@@ -132,12 +154,24 @@ class EndRidePage
                               ],
                             ),
                           ],
+=======
+                        const Text(
+                          'Ride \n 2 Km, 15 Min',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                         ),
                         const Spacer(),
                         Text(
                           'AED 250',
                           style: GoogleFonts.inter(
+<<<<<<< HEAD
                             fontSize: 16,
+=======
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                             color: Colors.white,
                           ),
                         ),
@@ -354,12 +388,18 @@ class EndRidePage
                           ),
                           child: TextButton(
                             onPressed: () {
+<<<<<<< HEAD
                               Navigator.pop(
                                 context,
                               );
                               Navigator.pushNamed(
                                 context,
                                 '/manual',
+=======
+                              Navigator.pushNamed(
+                                context,
+                                '/fare',
+>>>>>>> d1b7173ec0c2a62628973bd7c2db725f38d2496c
                               );
                             },
                             child: Text(
