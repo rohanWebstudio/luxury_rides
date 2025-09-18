@@ -7,6 +7,7 @@ import 'package:ride/fare.dart';
 import 'package:ride/help.dart';
 import 'package:ride/home.dart';
 import 'package:ride/login.dart';
+import 'package:ride/manual.dart';
 import 'package:ride/my_booking.dart';
 import 'package:ride/notifications.dart';
 import 'package:ride/onboarding.dart';
@@ -109,6 +110,10 @@ class MainApp
             (
               context,
             ) => const RideHistoryPage(),
+        '/manual':
+            (
+              context,
+            ) => const ManualPage(),
       },
     );
   }

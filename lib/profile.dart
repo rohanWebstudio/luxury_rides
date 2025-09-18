@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage
     extends
@@ -60,7 +61,7 @@ class _ProfilePageState
                         ),
                       ),
                       const Text(
-                        "Hi i am John",
+                        "Hi I am John",
                         style: TextStyle(
                           color: Colors.grey,
                         ),
@@ -73,7 +74,7 @@ class _ProfilePageState
                           );
                         },
                         child: const Text(
-                          'Edit Profile',
+                          "Edit Profile",
                         ),
                       ),
                     ],
@@ -151,11 +152,17 @@ class _ProfilePageState
                       '/emergencycontacts',
                       Colors.white,
                     ),
+                    // ✅ Logout with custom action
                     _menuItem(
                       Icons.logout,
                       'Logout',
-                      '/signin',
+                      null,
                       Colors.red,
+                      onTap: () {
+                        _logoutDialog(
+                          context,
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -167,17 +174,20 @@ class _ProfilePageState
     );
   }
 
+  /// Reusable menu item widget
   Widget
   _menuItem(
     IconData
     icon,
     String
     title,
-    String
+    String?
     route,
     Color
-    itemColor,
-  ) {
+    itemColor, {
+    VoidCallback?
+    onTap,
+  }) {
     return ListTile(
       leading: Icon(
         icon,
@@ -194,12 +204,137 @@ class _ProfilePageState
         color: Colors.grey,
         size: 16,
       ),
-      onTap: () {
-        Navigator.pushNamed(
-          context,
-          route,
-        );
-      },
+      onTap:
+          onTap ??
+          () {
+            if (route !=
+                null) {
+              Navigator.pushNamed(
+                context,
+                route,
+              );
+            }
+          },
+    );
+  }
+
+  /// Logout Confirmation Dialog
+  void
+  _logoutDialog(
+    BuildContext
+    context,
+  ) {
+    showDialog(
+      context: context,
+      builder:
+          (
+            context,
+          ) => Dialog(
+            backgroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                12,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(
+                16,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Logout",
+                    style: GoogleFonts.inter(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Are you sure you want to Logout?",
+                    style: GoogleFonts.inter(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 45,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.amber,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              8,
+                            ),
+                          ),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.pop(
+                                context,
+                              ); // Close dialog
+                            },
+                            child: Text(
+                              "Cancel",
+                              style: GoogleFonts.inter(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 45,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(
+                              8,
+                            ),
+                          ),
+                          child: TextButton(
+                            onPressed: () {
+                              // Clear stack and go to signin
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                '/signin',
+                                (
+                                  route,
+                                ) => false,
+                              );
+                            },
+                            child: Text(
+                              "Logout",
+                              style: GoogleFonts.inter(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
     );
   }
 }

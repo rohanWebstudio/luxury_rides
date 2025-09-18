@@ -120,11 +120,21 @@ class _PerformancePageState
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  "Trip completed\n50 trips over a week",
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 16,
+                Center(
+                  child: const Text(
+                    "Trip completed",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: const Text(
+                    "50 trips over a week",
+                    style: TextStyle(
+                      color: Colors.amber,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -146,11 +156,21 @@ class _PerformancePageState
                 const SizedBox(
                   height: 25,
                 ),
-                const Text(
-                  "Today's income",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
+                Row(
+                  children: [
+                    const Text(
+                      "Today's income",
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const Spacer(),
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.amber,
+                      size: 16,
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 5,
@@ -158,8 +178,8 @@ class _PerformancePageState
                 const Text(
                   "AED 500",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 26,
+                    color: Colors.amber,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -211,17 +231,32 @@ class _PerformancePageState
                   children: const [
                     Icon(
                       Icons.card_giftcard,
-                      color: Colors.amber,
+                      color: Colors.white,
                     ),
                     SizedBox(
                       width: 8,
                     ),
-                    Text(
-                      "\$0 Bonus",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
+                    Column(
+                      children: [
+                        Text(
+                          "\$0",
+                          style: TextStyle(
+                            color: Colors.amber,
+                          ),
+                        ),
+                        Text(
+                          "Bonus",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.amber,
+                      size: 16,
                     ),
                   ],
                 ),

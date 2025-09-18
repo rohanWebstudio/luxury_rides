@@ -17,6 +17,29 @@ class EndRidePage
     context,
   ) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(
+              context,
+            );
+          },
+        ),
+        title: Text(
+          'Towards Dubai Mall Road',
+          style: GoogleFonts.inter(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Stack(
         children: [
           Positioned.fill(
@@ -40,21 +63,6 @@ class EndRidePage
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                ),
-              ),
-            ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(
-                16.0,
-              ),
-              child: Text(
-                'Towards Dubai Mall Road',
-                style: GoogleFonts.inter(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -93,18 +101,43 @@ class EndRidePage
                     ),
                     child: Row(
                       children: [
-                        const Text(
-                          'Ride \n 2 Km, 15 Min',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                        const Icon(
+                          Icons.directions_car,
+                          color: Colors.white,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Ride',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  '2 Km, 15 Min',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.arrow_upward,
+                                  color: Colors.green,
+                                ),
+                                Text(
+                                  '5%',
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                         const Spacer(),
                         Text(
                           'AED 250',
                           style: GoogleFonts.inter(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
                             color: Colors.white,
                           ),
                         ),
@@ -321,9 +354,12 @@ class EndRidePage
                           ),
                           child: TextButton(
                             onPressed: () {
+                              Navigator.pop(
+                                context,
+                              );
                               Navigator.pushNamed(
                                 context,
-                                '/fare',
+                                '/manual',
                               );
                             },
                             child: Text(
