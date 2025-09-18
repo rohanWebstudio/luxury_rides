@@ -160,15 +160,26 @@ class ReviewPage
                     },
               ),
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                "See all Review",
-                style: TextStyle(
-                  color: Colors.amber,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "See all Review",
+                      style: TextStyle(
+                        color: Colors.amber,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.amber,
+                  ),
+                ],
               ),
             ),
           ],

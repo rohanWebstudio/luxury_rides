@@ -92,7 +92,7 @@ class _EditProfilePageState
                 height: 25,
               ),
               _buildTextField(
-                "Full Name",
+                "",
                 "Alex Turner",
               ),
               const SizedBox(
@@ -148,7 +148,7 @@ class _EditProfilePageState
                 height: 15,
               ),
               _buildTextField(
-                "Email",
+                "",
                 "alex.turner@example.com",
               ),
               const SizedBox(
@@ -190,14 +190,14 @@ class _EditProfilePageState
                 height: 20,
               ),
               _buildDateField(
-                "Date of birth",
+                "",
                 "14/08/1995",
               ),
               const SizedBox(
                 height: 20,
               ),
               _buildTextField(
-                "Bio",
+                "",
                 "Hi! i am this....",
                 maxLines: 3,
               ),

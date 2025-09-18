@@ -48,6 +48,9 @@ class _BookingPageState
         vertical: 8,
       ),
       shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: Colors.grey,
+        ),
         borderRadius: BorderRadius.circular(
           8,
         ),
@@ -213,6 +216,9 @@ class _BookingPageState
         vertical: 8,
       ),
       shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: Colors.grey,
+        ),
         borderRadius: BorderRadius.circular(
           8,
         ),
@@ -372,6 +378,9 @@ class _BookingPageState
         vertical: 8,
       ),
       shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: Colors.grey,
+        ),
         borderRadius: BorderRadius.circular(
           8,
         ),

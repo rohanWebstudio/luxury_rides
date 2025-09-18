@@ -149,19 +149,20 @@ class _ProfilePageState
                     _menuItem(
                       Icons.call,
                       "Emergency contacts",
-                      '/emergencycontacts',
+                      null,
                       Colors.white,
+                      onTap: () => _emergencyContactDialog(
+                        context,
+                      ),
                     ),
                     _menuItem(
                       Icons.logout,
-                      'Logout',
+                      "Logout",
                       null,
                       Colors.red,
-                      onTap: () {
-                        _logoutDialog(
-                          context,
-                        );
-                      },
+                      onTap: () => _logoutDialog(
+                        context,
+                      ),
                     ),
                   ],
                 ),
@@ -204,15 +205,13 @@ class _ProfilePageState
       ),
       onTap:
           onTap ??
-          () {
-            if (route !=
-                null) {
-              Navigator.pushNamed(
-                context,
-                route,
-              );
-            }
-          },
+          (route !=
+                  null
+              ? () => Navigator.pushNamed(
+                  context,
+                  route,
+                )
+              : null),
     );
   }
 
@@ -225,7 +224,7 @@ class _ProfilePageState
       context: context,
       builder:
           (
-            context,
+            _,
           ) => Dialog(
             backgroundColor: Colors.black,
             shape: RoundedRectangleBorder(
@@ -264,66 +263,28 @@ class _ProfilePageState
                   ),
                   Row(
                     children: [
-                      Expanded(
-                        child: Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.amber,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              8,
-                            ),
-                          ),
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pop(
-                                context,
-                              ); // Close dialog
-                            },
-                            child: Text(
-                              "Cancel",
-                              style: GoogleFonts.inter(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
+                      _dialogButton(
+                        text: "Cancel",
+                        onPressed: () => Navigator.pop(
+                          context,
+                        ),
+                        border: BorderSide(
+                          color: Colors.amber,
                         ),
                       ),
                       const SizedBox(
                         width: 12,
                       ),
-                      Expanded(
-                        child: Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(
-                              8,
-                            ),
-                          ),
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                '/signin',
-                                (
-                                  route,
-                                ) => false,
-                              );
-                            },
-                            child: Text(
-                              "Logout",
-                              style: GoogleFonts.inter(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
+                      _dialogButton(
+                        text: "Logout",
+                        onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          '/signin',
+                          (
+                            _,
+                          ) => false,
                         ),
+                        color: Colors.red,
                       ),
                     ],
                   ),
@@ -331,6 +292,115 @@ class _ProfilePageState
               ),
             ),
           ),
+    );
+  }
+
+  void
+  _emergencyContactDialog(
+    BuildContext
+    context,
+  ) {
+    showDialog(
+      context: context,
+      builder:
+          (
+            _,
+          ) => Dialog(
+            backgroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                12,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(
+                16,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Call 100",
+                    style: GoogleFonts.inter(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      _dialogButton(
+                        text: "Cancel",
+                        onPressed: () => Navigator.pop(
+                          context,
+                        ),
+                        border: BorderSide(
+                          color: Colors.amber,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      _dialogButton(
+                        text: "Call",
+                        onPressed: () {},
+                        color: Colors.amber,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+    );
+  }
+
+  Widget
+  _dialogButton({
+    required String
+    text,
+    required VoidCallback
+    onPressed,
+    Color
+    color = Colors
+        .transparent,
+    Color
+    textColor = Colors
+        .white,
+    BorderSide?
+    border,
+  }) {
+    return Expanded(
+      child: Container(
+        height: 45,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(
+            8,
+          ),
+          border:
+              border !=
+                  null
+              ? Border.fromBorderSide(
+                  border,
+                )
+              : null,
+        ),
+        child: TextButton(
+          onPressed: onPressed,
+          child: Text(
+            text,
+            style: GoogleFonts.inter(
+              color: textColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

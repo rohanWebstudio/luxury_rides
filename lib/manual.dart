@@ -75,12 +75,7 @@ class ManualPage
                             hintStyle: TextStyle(
                               color: Colors.white54,
                             ),
-                            enabledBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.amber,
-                              ),
-                            ),
-                            focusedBorder: const UnderlineInputBorder(
+                            enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.amber,
                               ),
@@ -113,14 +108,9 @@ class ManualPage
                             hintStyle: TextStyle(
                               color: Colors.white54,
                             ),
-                            enabledBorder: const UnderlineInputBorder(
+                            enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.green,
-                              ),
-                            ),
-                            focusedBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.green,
+                                color: Colors.amber,
                               ),
                             ),
                           ),
@@ -131,13 +121,25 @@ class ManualPage
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "Choose on Map",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.amber,
-                    ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on,
+                        color: Colors.amber,
+                        size: 18,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      const Text(
+                        "Choose on Map",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(
                     height: 12,
@@ -153,10 +155,6 @@ class ManualPage
                         ) {
                           return ListTile(
                             contentPadding: EdgeInsets.zero,
-                            leading: const Icon(
-                              Icons.location_on,
-                              color: Colors.white70,
-                            ),
                             title: const Text(
                               "Burj Khalifa",
                               style: TextStyle(

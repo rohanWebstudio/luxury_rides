@@ -119,12 +119,7 @@ class _FarePageState
                         hintStyle: TextStyle(
                           color: Colors.white54,
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.amber,
-                          ),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.amber,
                           ),
@@ -157,20 +152,18 @@ class _FarePageState
                         hintStyle: TextStyle(
                           color: Colors.white54,
                         ),
-                        enabledBorder: UnderlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Colors.green,
-                          ),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.green,
+                            color: Colors.amber,
                           ),
                         ),
                       ),
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 10,
               ),
               SizedBox(
                 width: double.infinity,
